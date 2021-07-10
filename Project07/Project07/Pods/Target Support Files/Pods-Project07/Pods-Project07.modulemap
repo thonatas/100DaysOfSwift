@@ -1,6 +1,0 @@
-framework module Pods_Project07 {
-  umbrella header "Pods-Project07-umbrella.h"
-
-  export *
-  module * { export * }
-}
