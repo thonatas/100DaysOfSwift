@@ -15,7 +15,6 @@
 		18C08619269B7DFC00110DE6 /* PersonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C08618269B7DFC00110DE6 /* PersonCollectionViewCell.swift */; };
 		18C0861C269B7F7900110DE6 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 18C0861B269B7F7900110DE6 /* SnapKit */; };
 		18C08620269B89B200110DE6 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C0861F269B89B200110DE6 /* Person.swift */; };
-		18C08622269B89EA00110DE6 /* PersonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C08621269B89EA00110DE6 /* PersonViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,7 +27,6 @@
 		187AA6D6269A8BF2002479D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18C08618269B7DFC00110DE6 /* PersonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCollectionViewCell.swift; sourceTree = "<group>"; };
 		18C0861F269B89B200110DE6 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
-		18C08621269B89EA00110DE6 /* PersonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,7 +92,6 @@
 			isa = PBXGroup;
 			children = (
 				187AA6CC269A8BF1002479D7 /* PersonViewController.swift */,
-				18C08621269B89EA00110DE6 /* PersonViewModel.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -193,7 +190,6 @@
 				18C08620269B89B200110DE6 /* Person.swift in Sources */,
 				187AA6CD269A8BF1002479D7 /* PersonViewController.swift in Sources */,
 				187AA6C9269A8BF1002479D7 /* AppDelegate.swift in Sources */,
-				18C08622269B89EA00110DE6 /* PersonViewModel.swift in Sources */,
 				187AA6CB269A8BF1002479D7 /* SceneDelegate.swift in Sources */,
 				18C08619269B7DFC00110DE6 /* PersonCollectionViewCell.swift in Sources */,
 			);

@@ -13,13 +13,15 @@ class PersonCollectionViewCell: UICollectionViewCell {
     //MARK: - DECLARATION OF VARIABLES / INITIALIZATION
         static let identifier = "PersonCollectionViewCell"
         
-        private let imageView = UIImageView()
-        private let nameLabel = UILabel()
+        let imageView = UIImageView()
+        let nameLabel = UILabel()
         
         override init(frame: CGRect) {
             super.init(frame: frame)
+            //contentView.frame = CGRect(x: 0, y: 0, width: 140, height: 180)
+            //contentView.clipsToBounds = true
             backgroundColor = .white
-            layer.cornerRadius = 15
+            layer.cornerRadius = 7
             addImageView()
             addNameLabel()
         }
@@ -29,16 +31,14 @@ class PersonCollectionViewCell: UICollectionViewCell {
         }
      
     //MARK: - FUNCTIONS
-        func setupCell(with person: Person) {
-            nameLabel.text = person.name
-            //imageView.image = person.image
-        }
-        
         private func addImageView() {
-            addSubview(imageView)
+            contentView.addSubview(imageView)
             
+            imageView.contentMode = .scaleToFill
+            imageView.layer.borderColor = UIColor(white: 0, alpha: 0.3).cgColor
+            imageView.layer.borderWidth = 2
+            imageView.layer.cornerRadius = 3
             imageView.translatesAutoresizingMaskIntoConstraints = false
-            imageView.contentMode = .center
             
             imageView.snp.makeConstraints { make in
                 make.top.equalToSuperview().offset(10)
@@ -49,11 +49,12 @@ class PersonCollectionViewCell: UICollectionViewCell {
         }
         
         private func addNameLabel() {
-            addSubview(nameLabel)
+            contentView.addSubview(nameLabel)
             
-            nameLabel.translatesAutoresizingMaskIntoConstraints = false
             nameLabel.font = .systemFont(ofSize: 15, weight: .regular)
             nameLabel.textAlignment = .center
+            nameLabel.numberOfLines = 2
+            nameLabel.translatesAutoresizingMaskIntoConstraints = false
 
             nameLabel.snp.makeConstraints { make in
                 make.top.equalTo(imageView.snp.bottom).offset(14)
