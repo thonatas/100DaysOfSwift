@@ -12,7 +12,7 @@ protocol PersonViewModelDelegate {
 }
 
 class PersonViewModel {
-    var persons:[Person] = [] {
+    var people: [Person] = [] {
         didSet {
             delegate?.loadDataDidFinish()
         }
