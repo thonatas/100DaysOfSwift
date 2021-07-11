@@ -29,10 +29,10 @@ class PersonCollectionViewCell: UICollectionViewCell {
         }
      
     //MARK: - FUNCTIONS
-//        func setupCell(options: PaymentOptionsMenu) {
-//            titleLabel.text = options.title
-//            iconImageView.image = options.paymentImageIcon
-//        }
+        func setupCell(with person: Person) {
+            nameLabel.text = person.name
+            //imageView.image = person.image
+        }
         
         private func addImageView() {
             addSubview(imageView)
