@@ -176,7 +176,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             score -= 1
             ballsQuantity -= 1
         } else if object.name == "box" {
-            //detroy box
+            //destroy(box: object)
         }
     }
 
@@ -186,6 +186,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             addChild(fireParticles)
         }
         ball.removeFromParent()
+    }
+    
+    func destroy(box: SKNode) {
+        box.removeFromParent()
     }
 
     func didBegin(_ contact: SKPhysicsContact) {
