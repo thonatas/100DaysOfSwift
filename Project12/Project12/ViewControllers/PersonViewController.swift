@@ -29,6 +29,16 @@ class PersonViewController: UIViewController {
         self.title = "Names to Faces"
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewPerson))
         addCollectionView()
+        
+        let defaults = UserDefaults.standard
+        if let savedPeople = defaults.object(forKey: "people") as? Data {
+            let jsonDecoder = JSONDecoder()
+            do {
+                people = try jsonDecoder.decode([Person].self, from: savedPeople)
+            } catch {
+                print("Failed to load people")
+            }
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -44,6 +54,15 @@ class PersonViewController: UIViewController {
         present(picker, animated: true)
     }
     
+    func save() {
+        let jsonEncoder = JSONEncoder()
+        if let savedData = try? jsonEncoder.encode(people) {
+            let defaults = UserDefaults.standard
+            defaults.set(savedData, forKey: "people")
+        } else {
+            print("Failed to save people.")
+        }
+    }
 }
 
 // MARK: - CollectionView functions
@@ -83,7 +102,7 @@ extension PersonViewController: UICollectionViewDelegate, UICollectionViewDataSo
         ac.addAction(UIAlertAction(title: "OK", style: .default) { [weak self, weak ac] _ in
             guard let newName = ac?.textFields?[0].text else { return }
             person.name = newName
-            //self?.save()
+            self?.save()
             self?.collectionView.reloadData()
         })
 
@@ -122,7 +141,7 @@ extension PersonViewController: UIImagePickerControllerDelegate, UINavigationCon
 
         let person = Person(name: "Unknown", image: imageName)
         people.append(person)
-        //save()
+        save()
         collectionView.reloadData()
         
         dismiss(animated: true)
