@@ -8,12 +8,66 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    private let backgroundView = UIView()
+    private let slider = UISlider()
+    private let imageView = UIImageView()
+    private let changeFilterButton = UIButton()
+    private let saveButton = UIButton()
+    private let label = UILabel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
 
-
+    private func setupView() {
+        addBackgroundView()
+        addImageView()
+        addLabel()
+        addSlider()
+        addChangeFilterButton()
+        addSaveButton()
+    }
+    
+    private func addBackgroundView() {
+        
+        
+    }
+    
+    private func addImageView() {
+        
+        
+    }
+    
+    private func addLabel() {
+        
+        
+    }
+    
+    private func addSlider() {
+        
+        
+    }
+    
+    private func addChangeFilterButton() {
+        
+        
+    }
+    
+    private func addSaveButton() {
+        
+        
+    }
+    
+    @objc private func changeFilterButtonTapped() {
+        
+        
+    }
+    
+    @objc private func saveButtonTapped() {
+        
+        
+    }
 }
 
